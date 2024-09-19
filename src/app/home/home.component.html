@@ -1,0 +1,35 @@
+
+<app-header></app-header>
+
+<div class="mt-3 p-5">
+    <h1>Welcome <span class="text-primary fw-bolder">{{user}}</span></h1>
+
+    <form class="m-5 border rounded p-5 justify-content-between">
+        <label for="hobbies" class="mb-3">Enter your hobbies here :</label>
+        <input [(ngModel)]="hobbies" name="hobbies" type="text" placeholder="Enter your hobbies" class="form-control">
+        <button class="btn btn-primary mt-3">Submit</button>
+    </form>
+    
+    <p *ngIf="hobbies" class="text-danger fw-bolder mt-3">Hobbies are : {{hobbies}}</p>
+
+    
+    <!-- table -->
+    <table class="table mt-5 border">
+     <thead >
+        <tr class="table-primary">
+        <th >#</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Salary</th>    
+        </tr>
+     </thead>
+     <tbody>
+        <tr *ngFor="let emp of allEmployee;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{emp.empId}}</td>
+            <td>{{emp.empName}}</td>
+            <td>{{emp.empSalary}}</td>
+        </tr>
+     </tbody>
+    </table>
+</div>

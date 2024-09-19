@@ -1,0 +1,35 @@
+<div style="min-height: 100vh;" class="d-flex justify-content-center align-items-center w-100">
+    <div class="w-50 border rounded p-5 card shadow">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="https://img.freepik.com/premium-vector/loginsecure-notice-login-verificationlogin-form-page-with-lock-password-safety-verification_183665-1267.jpg?w=740"
+                    alt="" height="300px" width="300px" class="justify-content-center align-items-center">
+            </div>
+
+            <div class="col-lg-6">
+                <form>
+                    <div>
+                        <h1 style="color: rgb(44, 172, 44);">LogIn </h1>
+                        <!-- string interpolation - description is inside 2 curly brackets -->
+                        <p class="text-secondary">{{description}}</p> 
+                        <!-- property binding - class is wrapped in sq brackets -->
+                        <p [class]="css_styles">{{description}}</p>
+
+                        <label for="usrname" class="form-label mt-2"></label>
+                        <input type="text" (change)="getUserName($event)" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Username" />
+
+                    </div>
+                    <div>
+                        <label for="exampleInputPassword1" class="form-label mt-3"></label>
+                        <input #pswd type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+                            autocomplete="off" />
+                    </div>
+                    <button (click)="login(pswd)" type="submit" class="btn btn-success mt-4 w-50">Login</button>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</div>
